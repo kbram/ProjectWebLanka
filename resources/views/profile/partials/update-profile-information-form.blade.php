@@ -46,6 +46,20 @@
                 </div>
             @endif
         </div>
+        <!-- Contact Number -->
+        <div class="col-6 mt-4">
+            <x-input-label for="contact_number" :value="__('Contact No')" />
+            <x-text-input id="contact_number" class="block mt-1 w-full" type="tel" name="contact_number" :value="old('contact_number', $user->contact_number)"
+                required autocomplete="contact_number" />
+            <x-input-error :messages="$errors->get('contact_number')" class="mt-2" />
+        </div>
+         <!-- Home Address -->
+         <div class="col-6 mt-4">
+            <x-input-label for="home_address" :value="__('Home Address')" />
+            <x-text-input id="home_address" class="block mt-1 w-full" type="text" name="home_address" :value="old('home_address', $user->home_address)"
+                required autofocus autocomplete="home_address" />
+            <x-input-error :messages="$errors->get('home_address')" class="mt-2" />
+        </div>
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
