@@ -56,3 +56,31 @@
 <!--Bootstrap -->
 <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 
+<script>
+    document.getElementById('contact_number').addEventListener('input', function(event) {
+    var phoneNumber = event.target.value;
+    var cleaned = phoneNumber.replace(/\D/g, '');
+    var formattedPhoneNumber = formatPhoneNumber(cleaned);
+    event.target.value = formattedPhoneNumber;
+});
+
+function formatPhoneNumber(phoneNumber) {
+    if (phoneNumber.length > 10) {
+        phoneNumber = phoneNumber.slice(0, 10);
+    }
+
+    var formatted = '';
+    for (var i = 0; i < phoneNumber.length; i++) {
+        if (i === 0) {
+            formatted += '(';
+        } else if (i === 3) {
+            formatted += ') - ';
+        } else if (i === 6) {
+            formatted += ' - ';
+        }
+        formatted += phoneNumber.charAt(i);
+    }
+    return formatted;
+}
+</script>
+
