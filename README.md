@@ -95,9 +95,9 @@ php artisan vendor:publish --tag=laravel2step
 ##### Install Breeze:
 1. import breeze dependency `composer require laravel/breeze --dev`
 2. install breeze `php artisan breeze:install`  
-      ==> select (Blade 0)
-      ==> Dark (Yes)
-      ==> Pest test (No)
+  * step1 => select (Blade 0)
+  * step2 => Dark (Yes)
+  * step3 => Pest test (No)
 
 #### Optionally Build Cache
 1. From the projects root folder run `php artisan config:cache`
